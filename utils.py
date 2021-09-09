@@ -67,6 +67,11 @@ def save_data(newdict):
     newNote = Note(title = newdict['titulo'], content = newdict['detalhes']) 
     db.add(newNote)
 
+def delete_data(id):
+    db = Database('bancoNotes')
+    db.delete(id)
+
+
 
 
     

@@ -1,4 +1,4 @@
-from utils import load_data, load_template, build_response, save_data
+from utils import load_data, load_template, build_response, save_data, delete_data
 import urllib
 from os import error, replace
 
@@ -6,7 +6,7 @@ def index(request):
     note_template = load_template('components/note.html')
     params = {}
     response = build_response()
-    #print(request)
+    print(request)
 
     print('\n' + request)
     if request.startswith('POST'):
@@ -26,7 +26,12 @@ def index(request):
             if chave_valor.startswith("detalhes"):
                 params["detalhes"] = urllib.parse.unquote_plus(chave_valor[chave_valor.find("=")+1:], encoding="utf-8", errors="replace")
 
-        save_data(params)
+        
+        if params["titulo"] == "delete":
+            delete_data(int(params["detalhes"]))
+
+        else:
+            save_data(params)
         
         print("Os parâmetros são: {}".format(params))
 
@@ -37,7 +42,7 @@ def index(request):
     # Cria uma lista de <li>'s para cada anotação
     # Se tiver curiosidade: https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions
     notes_li = [
-        note_template.format(title=dados.title, details=dados.content)
+        note_template.format(id = dados.id, title=dados.title, details=dados.content)
         for dados in load_data('bancoNotes')
     ]
     notes = '\n'.join(notes_li)

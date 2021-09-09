@@ -3,4 +3,24 @@
     <div class="card-content">
         <p>{details}</p>
     </div>
+
+    <form class="form-card-delete" method = "post">
+        <input hidden
+          class="form-card-title"
+          type="text"
+          name="titulo"
+          placeholder="Titulo"
+          value = "delete"
+        />
+        <input hidden
+          class="form-card-title"
+          type="text"
+          name="detalhes"
+          placeholder="Titulo"
+          value = {id}
+        />
+        
+        <button class="btn-delete" type="submit">Delete</button>
+    </form>
+
 </div>
