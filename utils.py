@@ -71,7 +71,10 @@ def delete_data(id):
     db = Database('bancoNotes')
     db.delete(id)
 
-
+def update_data(newDict, id):
+    db = Database('bancoNotes')
+    newNote = Note(id = id ,title = newDict['titulo'], content = newDict['detalhes'])
+    db.update(newNote)
 
 
     
