@@ -20,19 +20,23 @@ while True:
     request = client_connection.recv(1024).decode()
     print(request)
 
-    route = extract_route(request)
-    filepath = CUR_DIR / route
-    if filepath.is_file():
-        response = build_response() + read_file(filepath)
-    elif route == '':
-            response = index(request)
+    if request.strip() == "":
+        pass
+
     else:
-        response = bytes()
+        route = extract_route(request)
+        filepath = CUR_DIR / route
+        if filepath.is_file():
+            response = build_response() + read_file(filepath)
+        elif route == '':
+            response = index(request)
+        else:
+            response = bytes()
 
-    #print(response)
-    client_connection.sendall(response)
+        #print(response)
+        client_connection.sendall(response)
 
-    client_connection.close()
+        client_connection.close()
 
 server_socket.close()
 

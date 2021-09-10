@@ -266,4 +266,54 @@ p {
   justify-content: center;
 }
 
+.form-card-update {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  background-color: transparent;
+  border: 0;
+}
+
+.update-title {
+  background-color: transparent;
+  border: 0;
+  outline: none;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 18.72px;
+}
+
+
+.update-details {
+  background-color: transparent;
+  border: 0;
+  outline: none;
+  font-family: 'Permanent Marker', cursive;
+  color: #4c4c4c;
+  font-size: 13.3px;
+  
+}
+
+.btn-event {
+  position: relative;
+  background-color: #f7d736;
+  border-radius: 2px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-weight: bold;
+  font-family: "roboto", sans-serif;
+  margin: 2px;
+  width: 170px;
+  margin-left: 20px;
+}
+
+.btn-event-delete {
+  position: relative;
+  background-color: #f7d736;
+  border-radius: 2px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-weight: bold;
+  font-family: "roboto", sans-serif;
+  margin: 2px;
+  width: 170px;
+}
 

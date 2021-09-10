@@ -1,6 +1,56 @@
-<div class="card">
-    <h3 class="card-title">{title}</h3>
+<div class="card" id="card">
+    <!--<h3 class="card-title">{title}</h3>
     <div class="card-content">
         <p>{details}</p>
     </div>
+    -->
+
+    <form class="form-card-update" method = "post">
+        <input hidden
+          type="text"
+          name="tipo"
+          value = "update"
+        />
+        <input 
+          class="update-title"
+          type="text"
+          name="titulo"
+          value = "{title}"
+        />
+      
+        <p>
+          <input 
+            class="update-details"
+            type="text"
+            name="detalhes"
+            value = "{details}"
+          />
+        </P>
+        <input hidden
+          type="text"
+          name="id"
+          value = "{id}"
+        />
+        <button class="btn-event" type="submit">Update</button>
+    </form>
+
+    <form class="form-card-delete" method = "post">
+        <input hidden
+          class="form-card-title"
+          type="text"
+          name="titulo"
+          placeholder="Titulo"
+          value = "delete"
+        />
+        <input hidden
+          class="form-card-title"
+          type="text"
+          name="detalhes"
+          placeholder="Titulo"
+          value = {id}
+        />
+        
+        <button class="btn-event-delete" type="submit">Delete</button>
+    </form>
+
 </div>
